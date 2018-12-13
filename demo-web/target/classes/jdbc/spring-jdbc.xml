@@ -29,9 +29,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.jd.trip.hotel.pay.center.entity"/>
+        <property name="typeAliasesPackage" value="com.mq.dao"/>
         <property name="configLocation" value="classpath:jdbc/mybatis-config.xml"/>
-        <!--<property name="mapperLocations" value="classpath*:/com/jd/trip/hotel/pay/center/mapper/**/*Mapper.xml"/>-->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
@@ -46,7 +45,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.jd.trip.hotel.pay.center.dao" />
+        <property name="basePackage" value="com.mq.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
